@@ -4,6 +4,7 @@ from player.QLearningAI import QLearningAI
 
 import matplotlib.pyplot as plt
 import numpy as np
+from tqdm import tqdm
 
 def main():
     # Setup
@@ -15,7 +16,7 @@ def main():
     game_stats = np.empty((3, num_games), dtype=bool) # True for AI win, False for other
 
     RandomW = 0
-    for i in range(num_games):
+    for i in tqdm(range(num_games)):
         # AI1's game
         engine = GameEngine()
         engine.addPlayer(QAI1)
